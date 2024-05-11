@@ -28,3 +28,7 @@ df.index.names = ['date', 'ticker']
 df.columns = df.columns.str.lower()
 
 print(df)
+
+#Calculating features and technical indicators for each stock
+
+df['garmen_klass_vol'] = ((np.log(df['high'])-np.log(df['low']))**2)/2-(2*np.log(2)-1)*((np.log(df['adj close'])-np.log(df['open']))**2)
